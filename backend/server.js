@@ -13,6 +13,21 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.json({
+    status: "ok",
+    message: "FlowBoard API is running",
+    database: mongoose.connection.readyState === 1 ? "connected" : "disconnected",
+  });
+});
+
+app.get("/health", (req, res) => {
+  res.json({
+    status: "ok",
+    database: mongoose.connection.readyState === 1 ? "connected" : "disconnected",
+  });
+});
+
 const server = http.createServer(app);
 
 const io = new Server(server, {

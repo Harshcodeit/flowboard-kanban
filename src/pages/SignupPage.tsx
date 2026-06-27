@@ -179,7 +179,7 @@ const [mounted, setMounted] =
                     onChange={(e) =>
                     setName(e.target.value)
                     }
-                    placeholder="Jagriti Aswal"
+                    placeholder="Harshit Singh"
                     className="w-full px-4 py-3 rounded-xl bg-white/[0.05] border border-white/[0.08] text-white placeholder:text-slate-600 text-sm focus:outline-none focus:border-indigo-500/60"
                 />
             </div>

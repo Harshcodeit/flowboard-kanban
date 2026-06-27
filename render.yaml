@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: flowboard-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: 10000
+
+  - type: static
+    name: flowboard-frontend
+    env: static
+    rootDir: .
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://flowboard-backend.onrender.com

@@ -22,7 +22,12 @@ export const signup = async (
     }
   );
 
-  return res.json();
+  const data = await res.json();
+
+  if(!res.ok){
+    throw new Error(data.message || "Signup Failed";
+
+  return data;
 };
 
 export const login = async (
@@ -43,6 +48,11 @@ export const login = async (
       }),
     }
   );
+  const data = await res.json();
 
-  return res.json();
+  if(!res.ok){
+    throw new Error(data.message || "Login Failed")
+  }
+
+  return data;
 };

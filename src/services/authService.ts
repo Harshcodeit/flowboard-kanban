@@ -25,7 +25,7 @@ export const signup = async (
   const data = await res.json();
 
   if(!res.ok){
-    throw new Error(data.message || "Signup Failed";
+    throw new Error(data.message || "Signup Failed");
   }
 
   return data;
